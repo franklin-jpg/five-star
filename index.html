@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Five Star Restaurant — Luxury Dining Experience</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i> <span id="toastMsg">Reservation submitted!</span>
+    </div>
+
+    <!-- Floating Reservation Bar -->
+    <div class="float-bar" id="floatBar">
+        <span class="float-bar-text">Ready to dine?</span>
+        <a href="#reservation" class="btn-primary" style="padding:0.6rem 1.5rem; font-size:0.7rem;">
+            <i class="fas fa-calendar-alt"></i> Reserve Now
+        </a>
+        <a href="#menu" class="btn-secondary" style="padding:0.6rem 1.5rem; font-size:0.7rem;">
+            <i class="fas fa-utensils"></i> Order Online
+        </a>
+    </div>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar-inner">
+            <a href="#" class="logo">
+                ✦ Five Star
+                <span>Restaurant & Lounge</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">Our Story</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#offerings">Offerings</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#reservation" class="nav-cta">Reserve a Table</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#about" onclick="closeMobile()">Our Story</a>
+        <a href="#menu" onclick="closeMobile()">Menu</a>
+        <a href="#offerings" onclick="closeMobile()">Offerings</a>
+        <a href="#events" onclick="closeMobile()">Events</a>
+        <a href="#reservation" onclick="closeMobile()" style="color:var(--gold)">Reserve a Table</a>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home">
+        <div class="hero-bg parallax" id="heroBg"></div>
+        <div class="hero-ornament"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-star"></i>
+                Award-Winning Cuisine Since 2010
+                <i class="fas fa-star"></i>
+            </div>
+            <h1 class="hero-title">
+                Experience Luxury Dining<br>
+                <em>at Five Star Restaurant</em>
+            </h1>
+            <p class="hero-sub">Where Flavor Meets Elegance</p>
+            <div class="hero-ctas">
+                <a href="#reservation" class="btn-primary">
+                    <i class="fas fa-calendar-alt"></i>
+                    Reserve a Table
+                </a>
+                <a href="#menu" class="btn-secondary">
+                    <i class="fas fa-utensils"></i>
+                    Order Online
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-badges">
+            <div class="meal-badge"><i class="fas fa-sun"></i>Breakfast</div>
+            <div class="meal-badge"><i class="fas fa-cloud-sun"></i>Lunch</div>
+            <div class="meal-badge"><i class="fas fa-moon"></i>Dinner</div>
+            <div class="meal-badge"><i class="fas fa-coffee"></i>Brunch</div>
+            <div class="meal-badge"><i class="fas fa-cocktail"></i>Cocktails</div>
+            <div class="meal-badge"><i class="fas fa-wine-glass-alt"></i>Fine Wine</div>
+            <div class="meal-badge"><i class="fas fa-ice-cream"></i>Desserts</div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            Scroll
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image reveal">
+                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80"
+                        alt="Romantic dining setup">
+                    <div class="about-frame"></div>
+                </div>
+                <div class="about-content reveal reveal-delay-2">
+                    <div class="section-label">Our Story</div>
+                    <h2 class="section-title">A Legacy of <em>Culinary Excellence</em></h2>
+                    <div class="divider"></div>
+                    <p class="about-text">
+                        Born from a passion for extraordinary food and unforgettable experiences, Five Star Restaurant
+                        has been the heartbeat of luxury dining since 2010. We blend the bold flavors of authentic
+                        African cuisine with the refined elegance of international fine dining — creating a symphony for
+                        the senses.
+                    </p>
+                    <p class="about-text">
+                        Every dish is a masterpiece crafted with locally sourced, premium ingredients. Every evening is
+                        an occasion. Every guest is royalty.
+                    </p>
+                    <div class="about-tags">
+                        <span class="tag">Casual</span>
+                        <span class="tag">Cosy</span>
+                        <span class="tag">Romantic</span>
+                        <span class="tag">Trendy</span>
+                        <span class="tag">Upmarket</span>
+                        <span class="tag">Groups</span>
+                        <span class="tag">Tourists</span>
+                        <span class="tag">Students Welcome</span>
+                    </div>
+                    <div class="about-stat">
+                        <div class="stat-item">
+                            <div class="stat-num">15+</div>
+                            <div class="stat-label">Years of Excellence</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-num">50k+</div>
+                            <div class="stat-label">Happy Guests</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-num">30+</div>
+                            <div class="stat-label">Signature Dishes</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FEATURES ===== -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="features-header reveal">
+                <div class="section-label">Why Choose Us</div>
+                <h2 class="section-title">The <em>Five Star</em> Difference</h2>
+            </div>
+            <div class="features-grid">
+                <!-- Service Options -->
+                <div class="feature-card reveal">
+                    <div class="feature-icon"><i class="fas fa-concierge-bell"></i></div>
+                    <div class="feature-title">Dine-In Experience</div>
+                    <p class="feature-desc">Immerse yourself in our opulent dining room with attentive table service and
+                        a curated ambient atmosphere.</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-1">
+                    <div class="feature-icon"><i class="fas fa-car"></i></div>
+                    <div class="feature-title">Drive-Through Service</div>
+                    <p class="feature-desc">Enjoy luxury food on the go with our efficient drive-through service —
+                        quality never compromised.</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-2">
+                    <div class="feature-icon"><i class="fas fa-shopping-bag"></i></div>
+                    <div class="feature-title">Takeaway & Delivery</div>
+                    <p class="feature-desc">Premium meals packaged with care — available for takeaway or delivered right
+                        to your door.</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-3">
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="feature-title">No-Contact Delivery</div>
+                    <p class="feature-desc">Safe, contactless delivery options for your peace of mind — without
+                        sacrificing speed or quality.</p>
+                </div>
+                <!-- Accessibility -->
+                <div class="feature-card reveal">
+                    <div class="feature-icon"><i class="fas fa-wheelchair"></i></div>
+                    <div class="feature-title">Fully Accessible</div>
+                    <p class="feature-desc">Wheelchair-accessible entrance, seating, accessible toilets, and dedicated
+                        parking — dignity for every guest.</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-1">
+                    <div class="feature-icon"><i class="fas fa-wine-bottle"></i></div>
+                    <div class="feature-title">Premium Drinks Selection</div>
+                    <p class="feature-desc">Craft beers, world-class cocktails, curated wine list, and artisan spirits
+                        for every palate.</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-2">
+                    <div class="feature-icon"><i class="fas fa-birthday-cake"></i></div>
+                    <div class="feature-title">Extraordinary Desserts</div>
+                    <p class="feature-desc">Our pastry chefs craft desserts that are as beautiful as they are delicious
+                        — the perfect finale.</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-3">
+                    <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+                    <div class="feature-title">Healthy & Vegan Options</div>
+                    <p class="feature-desc">Thoughtfully prepared vegan, vegetarian, and health-forward dishes — because
+                        everyone deserves luxury.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MENU ===== -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <div class="menu-header reveal">
+                <div class="section-label">Signature Menu</div>
+                <h2 class="section-title">Culinary <em>Masterpieces</em></h2>
+                <p
+                    style="color:var(--cream-muted);margin-top:1rem;font-size:0.95rem;font-weight:300;max-width:500px;margin:1rem auto 0;">
+                    From our kitchen to your table — bold flavors, artful presentation.</p>
+            </div>
+            <div class="menu-grid">
+                <!-- Dish Cards -->
+                <div class="menu-card reveal">
+                    <div class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=600&q=80"
+                            alt="Beef Jollof Rice">
+                        <div class="menu-popular">Chef's Choice</div>
+                        <div class="menu-overlay"></div>
+                    </div>
+                    <div class="menu-info">
+                        <div class="menu-name">Beef Jollof Rice & Plantains</div>
+                        <p class="menu-desc">Slow-cooked seasoned beef over perfectly spiced jollof rice, served with
+                            sweet fried plantains.</p>
+                        <div class="menu-footer">
+                            <span class="menu-price">₦4,500</span>
+                            <button class="btn-order" onclick="showToast('Order placed!')">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card reveal reveal-delay-1">
+                    <div class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?w=600&q=80"
+                            alt="Spaghetti and Beef">
+                        <div class="menu-overlay"></div>
+                    </div>
+                    <div class="menu-info">
+                        <div class="menu-name">Spaghetti & Beef</div>
+                        <p class="menu-desc">Al dente spaghetti in rich tomato-herb sauce with tender braised beef —
+                            comfort elevated.</p>
+                        <div class="menu-footer">
+                            <span class="menu-price">₦3,800</span>
+                            <button class="btn-order" onclick="showToast('Order placed!')">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card reveal reveal-delay-2">
+                    <div class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1567620832903-9fc6debc209f?w=600&q=80"
+                            alt="Pasta and Rice">
+                        <div class="menu-overlay"></div>
+                    </div>
+                    <div class="menu-info">
+                        <div class="menu-name">Pasta & Rice Medley</div>
+                        <p class="menu-desc">A unique fusion of creamy pasta and fragrant seasoned rice — a beloved
+                            house specialty.</p>
+                        <div class="menu-footer">
+                            <span class="menu-price">₦3,200</span>
+                            <button class="btn-order" onclick="showToast('Order placed!')">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card reveal">
+                    <div class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=80"
+                            alt="Plantain Porridge">
+                        <div class="menu-popular">Local Favorite</div>
+                        <div class="menu-overlay"></div>
+                    </div>
+                    <div class="menu-info">
+                        <div class="menu-name">Plantain Porridge</div>
+                        <p class="menu-desc">Hearty unripe plantain cooked in palm oil, vegetables, and smoked fish —
+                            soul in every spoonful.</p>
+                        <div class="menu-footer">
+                            <span class="menu-price">₦2,800</span>
+                            <button class="btn-order" onclick="showToast('Order placed!')">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card reveal reveal-delay-1">
+                    <div class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=600&q=80"
+                            alt="Goat Meat Kebab">
+                        <div class="menu-overlay"></div>
+                    </div>
+                    <div class="menu-info">
+                        <div class="menu-name">Goat Meat Kebab</div>
+                        <p class="menu-desc">Premium goat meat marinated in spices and grilled to perfection — smoky,
+                            tender, unforgettable.</p>
+                        <div class="menu-footer">
+                            <span class="menu-price">₦5,000</span>
+                            <button class="btn-order" onclick="showToast('Order placed!')">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card reveal reveal-delay-2">
+                    <div class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=600&q=80"
+                            alt="Dried Catfish">
+                        <div class="menu-overlay"></div>
+                    </div>
+                    <div class="menu-info">
+                        <div class="menu-name">Dried Catfish Special</div>
+                        <p class="menu-desc">Traditional dried catfish prepared in a rich, aromatic pepper sauce — a
+                            true taste of home.</p>
+                        <div class="menu-footer">
+                            <span class="menu-price">₦3,500</span>
+                            <button class="btn-order" onclick="showToast('Order placed!')">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card reveal">
+                    <div class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1563379091339-03246963d51a?w=600&q=80"
+                            alt="Chocolate Cake">
+                        <div class="menu-popular">Dessert Star</div>
+                        <div class="menu-overlay"></div>
+                    </div>
+                    <div class="menu-info">
+                        <div class="menu-name">Chocolate Indulgence Cake</div>
+                        <p class="menu-desc">Dark Belgian chocolate layers with ganache and gold leaf — the crown jewel
+                            of our dessert menu.</p>
+                        <div class="menu-footer">
+                            <span class="menu-price">₦2,200</span>
+                            <button class="btn-order" onclick="showToast('Order placed!')">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card reveal reveal-delay-1">
+                    <div class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=600&q=80"
+                            alt="Cold Stone Ice Cream">
+                        <div class="menu-overlay"></div>
+                    </div>
+                    <div class="menu-info">
+                        <div class="menu-name">Cold Stone Ice Cream</div>
+                        <p class="menu-desc">Hand-crafted premium ice cream mixed fresh to order with your choice of
+                            luxurious toppings.</p>
+                        <div class="menu-footer">
+                            <span class="menu-price">₦1,800</span>
+                            <button class="btn-order" onclick="showToast('Order placed!')">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-cta reveal">
+                <a href="#reservation" class="btn-primary" style="display:inline-flex;">
+                    <i class="fas fa-book-open"></i>
+                    View Full Menu
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== OFFERINGS ===== -->
+    <section class="offerings" id="offerings">
+        <div class="container">
+            <div class="offerings-header reveal">
+                <div class="section-label">What We Offer</div>
+                <h2 class="section-title">Something for <em>Every Occasion</em></h2>
+            </div>
+            <div class="offerings-grid">
+                <div class="offering-item reveal"><span class="offering-icon"><i
+                            class="fas fa-wine-bottle"></i></span><span class="offering-label">Alcohol, Beer &
+                        Wine</span></div>
+                <div class="offering-item reveal reveal-delay-1"><span class="offering-icon"><i
+                            class="fas fa-cocktail"></i></span><span class="offering-label">Signature Cocktails</span>
+                </div>
+                <div class="offering-item reveal reveal-delay-2"><span class="offering-icon"><i
+                            class="fas fa-coffee"></i></span><span class="offering-label">Premium Coffee</span></div>
+                <div class="offering-item reveal"><span class="offering-icon"><i
+                            class="fas fa-glass-cheers"></i></span><span class="offering-label">Happy Hour
+                        Specials</span></div>
+                <div class="offering-item reveal reveal-delay-1"><span class="offering-icon"><i
+                            class="fas fa-seedling"></i></span><span class="offering-label">Vegan Options</span></div>
+                <div class="offering-item reveal reveal-delay-2"><span class="offering-icon"><i
+                            class="fas fa-leaf"></i></span><span class="offering-label">Vegetarian Menu</span></div>
+                <div class="offering-item reveal"><span class="offering-icon"><i
+                            class="fas fa-apple-alt"></i></span><span class="offering-label">Healthy Options</span>
+                </div>
+                <div class="offering-item reveal reveal-delay-1"><span class="offering-icon"><i
+                            class="fas fa-moon"></i></span><span class="offering-label">Late-Night Food</span></div>
+                <div class="offering-item reveal reveal-delay-2"><span class="offering-icon"><i
+                            class="fas fa-infinity"></i></span><span class="offering-label">All You Can Eat</span></div>
+                <div class="offering-item reveal"><span class="offering-icon"><i
+                            class="fas fa-th-large"></i></span><span class="offering-label">Small Plates</span></div>
+                <div class="offering-item reveal reveal-delay-1"><span class="offering-icon"><i
+                            class="fas fa-bolt"></i></span><span class="offering-label">Quick Bites</span></div>
+                <div class="offering-item reveal reveal-delay-2"><span class="offering-icon"><i
+                            class="fas fa-star"></i></span><span class="offering-label">Chef's Specials</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EVENTS / FAMILY ===== -->
+    <section class="events" id="events">
+        <div class="container">
+            <div class="events-grid">
+                <div class="events-image reveal">
+                    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80"
+                        alt="Private dining event">
+                    <div class="events-badge">
+                        <div class="events-badge-num">200+</div>
+                        <div class="events-badge-text">Events Hosted</div>
+                    </div>
+                </div>
+                <div class="reveal reveal-delay-2">
+                    <div class="section-label">Family & Events</div>
+                    <h2 class="section-title">Create <em>Memories</em> That Last</h2>
+                    <div class="divider"></div>
+                    <p style="color:var(--cream-muted);line-height:1.8;font-weight:300;margin-bottom:2rem;">
+                        From intimate family dinners to grand celebrations, Five Star Restaurant is your venue of
+                        choice. Our private dining room and world-class catering make every event legendary.
+                    </p>
+                    <div class="events-list">
+                        <div class="event-item"><i class="fas fa-child"></i><span>Family-friendly with kids' menu and
+                                high chairs</span></div>
+                        <div class="event-item"><i class="fas fa-birthday-cake"></i><span>Kids' birthday party
+                                hosting</span></div>
+                        <div class="event-item"><i class="fas fa-door-open"></i><span>Exclusive private dining
+                                room</span></div>
+                        <div class="event-item"><i class="fas fa-utensils"></i><span>Full catering & event
+                                services</span></div>
+                        <div class="event-item"><i class="fas fa-ring"></i><span>Anniversaries & romantic dinners</span>
+                        </div>
+                        <div class="event-item"><i class="fas fa-briefcase"></i><span>Corporate dining & business
+                                events</span></div>
+                        <div class="event-item"><i class="fas fa-graduation-cap"></i><span>Graduation & celebration
+                                packages</span></div>
+                    </div>
+                    <div style="margin-top:2.5rem;">
+                        <a href="#reservation" class="btn-primary">
+                            <i class="fas fa-calendar-check"></i>
+                            Plan Your Event
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RESERVATION ===== -->
+    <section class="reservation" id="reservation">
+        <div class="container">
+            <div class="reservation-inner">
+                <div class="reveal">
+                    <div class="section-label">Make a Reservation</div>
+                    <h2 class="section-title">Book Your <em>Experience</em></h2>
+                    <div class="divider"></div>
+                    <p style="color:var(--cream-muted);line-height:1.8;font-weight:300;margin-bottom:2rem;">
+                        Brunch, Lunch & Dinner Reservations Recommended. Secure your table at Awka's most sought-after
+                        dining destination.
+                    </p>
+                    <div class="reservation-note">
+                        <i class="fas fa-clock"></i>
+                        <p><strong>High Demand Notice:</strong> Five Star Restaurant typically has a wait. We strongly
+                            recommend booking in advance to guarantee your preferred time and seating.</p>
+                    </div>
+                    <div style="margin-top:2.5rem;">
+                        <div style="display:flex;flex-direction:column;gap:1.2rem;">
+                            <div
+                                style="display:flex;align-items:center;gap:1rem;font-size:0.85rem;color:var(--cream-muted);">
+                                <i class="fas fa-phone" style="color:var(--gold)"></i> +234 800 FIVE STAR
+                            </div>
+                            <div
+                                style="display:flex;align-items:center;gap:1rem;font-size:0.85rem;color:var(--cream-muted);">
+                                <i class="fas fa-envelope" style="color:var(--gold)"></i> reservations@fivestarng.com
+                            </div>
+                            <div
+                                style="display:flex;align-items:center;gap:1rem;font-size:0.85rem;color:var(--cream-muted);">
+                                <i class="fas fa-map-marker-alt" style="color:var(--gold)"></i> Awka 420110, Anambra,
+                                Nigeria
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reservation-form reveal reveal-delay-2">
+                    <div style="margin-bottom:2rem;">
+                        <h3 style="font-family:var(--font-serif);font-size:1.6rem;color:var(--cream);font-weight:300;">
+                            Reserve Your Table</h3>
+                        <p style="font-size:0.75rem;color:var(--cream-muted);margin-top:0.5rem;">Fill in your details
+                            below and we'll confirm within 2 hours.</p>
+                    </div>
+                    <form id="reservationForm" onsubmit="submitForm(event)">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label">Full Name</label>
+                                <input class="form-input" type="text" placeholder="Your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Email Address</label>
+                                <input class="form-input" type="email" placeholder="your@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Phone Number</label>
+                                <input class="form-input" type="tel" placeholder="+234 ___________" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Number of Guests</label>
+                                <select class="form-select form-input" required>
+                                    <option value="">Select guests</option>
+                                    <option>1 Guest</option>
+                                    <option>2 Guests</option>
+                                    <option>3–4 Guests</option>
+                                    <option>5–6 Guests</option>
+                                    <option>7–10 Guests</option>
+                                    <option>10+ Guests (Private Dining)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Preferred Date</label>
+                                <input class="form-input" type="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Preferred Time</label>
+                                <select class="form-select form-input" required>
+                                    <option value="">Select time</option>
+                                    <option>7:00 AM – Breakfast</option>
+                                    <option>9:00 AM – Brunch</option>
+                                    <option>11:00 AM – Late Brunch</option>
+                                    <option>12:00 PM – Lunch</option>
+                                    <option>2:00 PM – Late Lunch</option>
+                                    <option>6:00 PM – Dinner</option>
+                                    <option>8:00 PM – Late Dinner</option>
+                                </select>
+                            </div>
+                            <div class="form-group full">
+                                <label class="form-label">Special Requests (optional)</label>
+                                <input class="form-input" type="text"
+                                    placeholder="Anniversary, dietary needs, high chair...">
+                            </div>
+                            <button type="submit" class="form-submit">
+                                <i class="fas fa-star"></i>
+                                Book Your Experience
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PAYMENT & PARKING ===== -->
+    <section class="payment" id="payment">
+        <div class="container">
+            <div style="text-align:center;margin-bottom:4rem;" class="reveal">
+                <div class="section-label" style="justify-content:center;">Information</div>
+                <h2 class="section-title">Payments & <em>Parking</em></h2>
+            </div>
+            <div class="payment-grid">
+                <div class="reveal">
+                    <h3 class="payment-section-title"><i class="fas fa-credit-card"
+                            style="color:var(--gold);margin-right:0.7rem;font-size:1.2rem;"></i>Payment Methods</h3>
+                    <div class="payment-options">
+                        <div class="payment-option"><i class="fas fa-credit-card"></i><span>Credit Cards</span></div>
+                        <div class="payment-option"><i class="fas fa-money-check-alt"></i><span>Debit Cards</span></div>
+                        <div class="payment-option"><i class="fas fa-mobile-alt"></i><span>NFC Mobile Pay</span></div>
+                        <div class="payment-option"><i class="fab fa-apple-pay"></i><span>Apple Pay</span></div>
+                        <div class="payment-option"><i class="fab fa-google-pay"></i><span>Google Pay</span></div>
+                        <div class="payment-option"><i class="fas fa-university"></i><span>Bank Transfer</span></div>
+                    </div>
+                </div>
+                <div class="reveal reveal-delay-2">
+                    <h3 class="payment-section-title"><i class="fas fa-parking"
+                            style="color:var(--gold);margin-right:0.7rem;font-size:1.2rem;"></i>Parking Options</h3>
+                    <div class="parking-list">
+                        <div class="parking-item"><i class="fas fa-check-circle"></i>Free street parking available</div>
+                        <div class="parking-item"><i class="fas fa-check-circle"></i>Free on-site parking lot</div>
+                        <div class="parking-item"><i class="fas fa-check-circle"></i>Paid parking lot adjacent</div>
+                        <div class="parking-item"><i class="fas fa-check-circle"></i>Plenty of parking space</div>
+                        <div class="parking-item"><i class="fas fa-wheelchair"></i>Wheelchair-accessible parking bays
+                        </div>
+                        <div class="parking-item"><i class="fas fa-car"></i>Valet parking (by request)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span class="footer-logo">✦ Five Star Restaurant</span>
+                    <p class="footer-tagline">Where flavor meets elegance. Award-winning cuisine in the heart of Awka
+                        420110, Anambra. An experience that transcends dining.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer-col-title">Quick Links</div>
+                    <ul class="footer-links">
+                        <li><a href="#about">Our Story</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#offerings">What We Offer</a></li>
+                        <li><a href="#events">Events & Private Dining</a></li>
+                        <li><a href="#reservation">Reservations</a></li>
+                        <li><a href="#">Gift Cards</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-col-title">Contact</div>
+                    <ul class="footer-links">
+                        <li><a href="#">Awka 420110, Anambra</a></li>
+                        <li><a href="tel:+234800FIVESTAR">+234 800 FIVE STAR</a></li>
+                        <li><a href="mailto:hello@fivestarng.com">hello@fivestarng.com</a></li>
+                        <li><a href="#">reservations@fivestarng.com</a></li>
+                        <li><a href="#">events@fivestarng.com</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-col-title">Opening Hours</div>
+                    <div style="display:flex;flex-direction:column;gap:0;">
+                        <div class="hours-item"><span>Breakfast</span><span>7:00 – 11:00 AM</span></div>
+                        <div class="hours-item"><span>Brunch</span><span>9:00 – 12:00 PM</span></div>
+                        <div class="hours-item"><span>Lunch</span><span>12:00 – 3:00 PM</span></div>
+                        <div class="hours-item"><span>Dinner</span><span>6:00 – 11:00 PM</span></div>
+                        <div class="hours-item"><span>Happy Hour</span><span>4:00 – 6:00 PM</span></div>
+                        <div class="hours-item" style="border:none;"><span>Late Night</span><span>10:00 PM – 1:00
+                                AM</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copy">©
+                    <script>document.write(new Date().getFullYear())</script> <span>Five Star Restaurant</span>. All
+                    rights reserved. Crafted with ✦ in Awka south, Anambra, Nigeria.
+                </p>
+                <div style="display:flex;gap:1.5rem;">
+                    <a href="#" style="font-size:0.72rem;color:rgba(212,196,168,0.4);text-decoration:none;">Privacy
+                        Policy</a>
+                    <a href="#" style="font-size:0.72rem;color:rgba(212,196,168,0.4);text-decoration:none;">Terms of
+                        Service</a>
+                    <a href="#" style="font-size:0.72rem;color:rgba(212,196,168,0.4);text-decoration:none;">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
