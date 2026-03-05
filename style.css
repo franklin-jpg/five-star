@@ -290,7 +290,7 @@ body::before {
   text-decoration: none; border: 1px solid rgba(245,239,230,0.4); border-radius: 2px;
   display: inline-flex; align-items: center; gap: 0.7rem;
   transition: all var(--transition);
-  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 .btn-secondary:hover {
   border-color: var(--gold); color: var(--gold);
